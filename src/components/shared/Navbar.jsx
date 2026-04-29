@@ -1,29 +1,38 @@
 import { FaRegClock } from "react-icons/fa";
 import { GoGraph } from "react-icons/go";
 import { RiHome2Line } from "react-icons/ri";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 
 const Navbar = () => {
   const links = [
     <li>
-      <Link to="/">
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? "bg-[#244D3F] text-white" : ""
+        }
+        to="/"
+      >
         <RiHome2Line />
         Home
-      </Link>
+      </NavLink>
     </li>,
     <li>
-      <Link to="/booking">
+      <NavLink to="/timeline"  className={({ isActive }) =>
+          isActive ? "bg-[#244D3F] text-white" : ""
+        }>
         {" "}
         <FaRegClock />
         Timeline
-      </Link>
+      </NavLink>
     </li>,
     <li>
-      <Link to="/blogs">
+      <NavLink to="/stats"  className={({ isActive }) =>
+          isActive ? "bg-[#244D3F] text-white" : ""
+        }>
         {" "}
         <GoGraph />
         Stats
-      </Link>
+      </NavLink>
     </li>,
   ];
 
@@ -57,7 +66,9 @@ const Navbar = () => {
         </div>
         <a className="btn btn-ghost text-xl  ">
           <div className="flex items-center">
-            <h3>Keen<span className="text-[#244D3F]" >Keeper</span></h3>
+            <h3>
+              Keen<span className="text-[#244D3F]">Keeper</span>
+            </h3>
           </div>
         </a>
       </div>
