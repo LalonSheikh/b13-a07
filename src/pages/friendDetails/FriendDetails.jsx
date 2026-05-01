@@ -1,18 +1,20 @@
+import { useContext } from "react";
 import { FiArchive } from "react-icons/fi";
 import { LuMessageSquareMore } from "react-icons/lu";
 import { MdOutlineWifiCalling3 } from "react-icons/md";
 import { PiVideoCamera } from "react-icons/pi";
 import { RiDeleteBin6Line, RiNotificationSnoozeLine } from "react-icons/ri";
 import { useLoaderData, useParams } from "react-router";
+import { FriendContext } from "../../context/FriendProvider";
 
 const FriendDetails = () => {
   const { id } = useParams();
-  console.log(id, "params");
+  // console.log(id, "params");
 
   const friends = useLoaderData();
-  console.log(friends, "friends");
+  // console.log(friends, "friends");
   const expectedFriends = friends.find((friend) => friend.id === parseInt(id));
-  console.log("expected Friend", expectedFriends);
+  // console.log("expected Friend", expectedFriends);
   const {
     picture,
     name,
@@ -24,6 +26,10 @@ const FriendDetails = () => {
     goal,
     next_due_date,
   } = expectedFriends;
+
+  const { handleCall, handleMessage, handleVideo } = useContext(FriendContext);
+
+  // console.log("friendContext",friendContext)
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
@@ -42,18 +48,16 @@ const FriendDetails = () => {
               <span className="px-2 py-1 text-xs bg-red-100 text-red-600 rounded-full">
                 {status}
               </span>
-              <p className="px-2 py-1 flex gap-2 text-xs bg-green-100 text-green-600 rounded-full">
+              <span className="px-2 py-1 flex gap-2 text-xs bg-green-100 text-green-600 rounded-full">
                 {tags.map((tag, ind) => (
                   <p className="bg-green-200 rounded-2xl px-2" key={ind}>
                     {tag}
                   </p>
                 ))}
-              </p>
+              </span>
             </div>
 
-            <p className="text-sm text-gray-500 mt-3 italic">
-        {bio}
-            </p>
+            <p className="text-sm text-gray-500 mt-3 italic">{bio}</p>
             <p className="text-xs text-gray-400">Preferred: {email}</p>
           </div>
 
@@ -77,25 +81,30 @@ const FriendDetails = () => {
           {/* STATS */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-white rounded-xl shadow p-4 text-center">
-              <p className="text-2xl font-bold">{days_since_contact}</p>
+              <p className="text-2xl font-bold text-[#244D3F]">
+                {days_since_contact}
+              </p>
               <p className="text-sm text-gray-500">Days Since Contact</p>
             </div>
 
             <div className="bg-white rounded-xl shadow p-4 text-center">
-              <p className="text-2xl font-bold">{goal}</p>
+              <p className="text-2xl font-bold text-[#244D3F]">{goal}</p>
               <p className="text-sm text-gray-500">Goal (Days)</p>
             </div>
 
             <div className="bg-white rounded-xl shadow p-4 text-center">
-              <p className="text-lg font-semibold">{next_due_date}</p>
+              <p className="text-lg font-semibold text-[#244D3F]">
+                {next_due_date}
+              </p>
               <p className="text-sm text-gray-500">Next Due</p>
             </div>
           </div>
 
-          {/* RELATIONSHIP GOAL */}
           <div className="bg-white rounded-xl shadow p-5 flex justify-between items-center">
             <div>
-              <h3 className="font-semibold">Relationship Goal</h3>
+              <h3 className="font-semibold text-[#244D3F]">
+                Relationship Goal
+              </h3>
               <p className="text-sm text-gray-500">Connect every 30 days</p>
             </div>
             <button className="px-3 py-1 font-bold shadow rounded-lg text-sm hover:bg-gray-100">
@@ -103,19 +112,24 @@ const FriendDetails = () => {
             </button>
           </div>
 
-          {/* QUICK CHECK-IN */}
           <div className="bg-white rounded-xl shadow p-5">
             <h3 className="font-semibold mb-4">Quick Check-In</h3>
 
             <div className="grid grid-cols-3 gap-4">
-              <button className="flex flex-col items-center gap-2 p-4  rounded-lg hover:bg-gray-50">
+              <button
+                onClick={() => handleCall(expectedFriends)}
+                className="flex flex-col items-center gap-2 p-4  rounded-lg hover:bg-gray-50"
+              >
                 <span className="text-sm">
                   <MdOutlineWifiCalling3 />
                   Call
                 </span>
               </button>
 
-              <button className="flex flex-col items-center gap-2 p-4  rounded-lg hover:bg-gray-50">
+              <button
+                onClick={() => handleMessage(expectedFriends)}
+                className="flex flex-col items-center gap-2 p-4  rounded-lg hover:bg-gray-50"
+              >
                 <span className="text-sm">
                   {" "}
                   <LuMessageSquareMore />
@@ -123,7 +137,7 @@ const FriendDetails = () => {
                 </span>
               </button>
 
-              <button className="flex flex-col items-center gap-2 p-4  rounded-lg hover:bg-gray-50">
+              <button onClick={()=>handleVideo(expectedFriends)} className="flex flex-col items-center gap-2 p-4  rounded-lg hover:bg-gray-50">
                 <span className="text-sm">
                   <PiVideoCamera className="text-lg" /> Video
                 </span>

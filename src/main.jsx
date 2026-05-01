@@ -9,6 +9,7 @@ import Home from "./pages/home/Home.jsx";
 import ErrorPage from "./pages/errorPage/ErrorPage.jsx";
 import FriendDetails from "./pages/friendDetails/FriendDetails.jsx";
 import FriendProvider from "./context/FriendProvider.jsx";
+import { ToastContainer } from "react-toastify";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <FriendProvider>
       <RouterProvider router={router} />,
+        <ToastContainer />
     </FriendProvider>
   </StrictMode>,
 );

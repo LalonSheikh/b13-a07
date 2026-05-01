@@ -4,7 +4,7 @@ import FriendSection from "../../components/Friend/FriendSection";
 
 const Home = () => {
   const friendData = useLoaderData();
-  console.log(friendData);
+  // console.log(friendData);
 
   return (
     <div>
