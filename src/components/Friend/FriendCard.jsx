@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const FriendCard = ({ friend }) => {
   let status = "";
 
@@ -10,7 +12,10 @@ const FriendCard = ({ friend }) => {
   }
 
   return (
-    <div className="card bg-base-100 shadow-sm">
+    <Link
+      to={`/friendDetails/${friend.id}`}
+      className="card bg-base-100 shadow-sm"
+    >
       <figure className=" ">
         <img src={friend.picture} alt="Shoes" className="rounded-full w-24" />
       </figure>
@@ -18,8 +23,8 @@ const FriendCard = ({ friend }) => {
         <h2 className="card-title">{friend.name}</h2>
         <p>{friend.days_since_contact}d ago</p>
         <div className="flex gap-4">
-          {friend.tags.map((tag) => (
-            <p className="bg-green-200 rounded-2xl px-2" key={tag.id}>
+          {friend.tags.map((tag, ind) => (
+            <p className="bg-green-200 rounded-2xl px-2" key={ind}>
               {tag}
             </p>
           ))}
@@ -29,7 +34,7 @@ const FriendCard = ({ friend }) => {
           {friend.status}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 

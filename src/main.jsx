@@ -1,4 +1,4 @@
-import { Children, StrictMode } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router";
@@ -8,6 +8,7 @@ import Analytics from "./pages/analytics/Analytics.jsx";
 import Home from "./pages/home/Home.jsx";
 import ErrorPage from "./pages/errorPage/ErrorPage.jsx";
 import FriendDetails from "./pages/friendDetails/FriendDetails.jsx";
+import FriendProvider from "./context/FriendProvider.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
         element: <Home></Home>,
         loader: () => fetch("/friends.json"),
       },
+
       {
         path: "/timeline",
         element: <Timeline></Timeline>,
@@ -28,9 +30,10 @@ const router = createBrowserRouter([
         element: <Analytics></Analytics>,
       },
       {
-        path:"/friendDetails/:id",
-        element:<FriendDetails/>
-      }
+        path: "/friendDetails/:id",
+        element: <FriendDetails />,
+        loader: () => fetch("/friends.json"),
+      },
     ],
     errorElement: <ErrorPage />,
   },
@@ -38,6 +41,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />,
+    <FriendProvider>
+      <RouterProvider router={router} />,
+    </FriendProvider>
   </StrictMode>,
 );
