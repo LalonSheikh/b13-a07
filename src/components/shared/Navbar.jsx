@@ -17,18 +17,24 @@ const Navbar = () => {
       </NavLink>
     </li>,
     <li>
-      <NavLink to="/timeline"  className={({ isActive }) =>
+      <NavLink
+        to="/timeline"
+        className={({ isActive }) =>
           isActive ? "bg-[#244D3F] text-white" : ""
-        }>
+        }
+      >
         {" "}
         <FaRegClock />
         Timeline
       </NavLink>
     </li>,
     <li>
-      <NavLink to="/stats"  className={({ isActive }) =>
+      <NavLink
+        to="/stats"
+        className={({ isActive }) =>
           isActive ? "bg-[#244D3F] text-white" : ""
-        }>
+        }
+      >
         {" "}
         <GoGraph />
         Stats
@@ -37,7 +43,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="navbar bg-base-100 shadow-sm container mx-auto">
+    <div className="navbar bg-base-100 shadow-sm ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

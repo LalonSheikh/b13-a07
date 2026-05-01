@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Jessica",
+    "picture": "https://i.ibb.co.com/HLP3WvSQ/sample1.jpg",
+    "email": "ahsan.rahman@gmail.com",
+    "days_since_contact": 18,
+    "status": "overdue",
+    "tags": ["university", "close friend"],
+    "bio": "We studied Computer Science together at Dhaka University. Often discussed startups and technology trends.",
+    "goal": 14,
+    "next_due_date": "2026-04-20"
+  },
+  {
+    "id": 2,
+    "name": "Nusrat Jahan",
+    "picture": "https://randomuser.me/api/portraits/women/44.jpg",
+    "email": "nusrat.jahan@yahoo.com",
+    "days_since_contact": 10,
+    "status": "almost due",
+    "tags": ["colleague", "marketing"],
+    "bio": "Worked together on a digital marketing campaign. Very creative and always shares useful industry insights.",
+    "goal": 14,
+    "next_due_date": "2026-05-05"
+  },
+  {
+    "id": 3,
+    "name": "Imran Hossain",
+    "picture": "https://randomuser.me/api/portraits/men/51.jpg",
+    "email": "imran.hossain@outlook.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["school", "football"],
+    "bio": "School friend who still plays football every weekend. We catch up over matches and tea.",
+    "goal": 14,
+    "next_due_date": "2026-05-10"
+  },
+  {
+    "id": 4,
+    "name": "Farhana Akter",
+    "picture": "https://randomuser.me/api/portraits/women/65.jpg",
+    "email": "farhana.akter@gmail.com",
+    "days_since_contact": 22,
+    "status": "overdue",
+    "tags": ["neighbor", "family friend"],
+    "bio": "Grew up in the same neighborhood. Our families are very close and often visit each other during festivals.",
+    "goal": 14,
+    "next_due_date": "2026-04-15"
+  },
+  {
+    "id": 5,
+    "name": "Rakib Hasan",
+    "picture": "https://randomuser.me/api/portraits/men/29.jpg",
+    "email": "rakib.hasan@gmail.com",
+    "days_since_contact": 13,
+    "status": "almost due",
+    "tags": ["freelancer", "web dev"],
+    "bio": "Met through freelancing projects. We often collaborate on React and Node.js applications.",
+    "goal": 14,
+    "next_due_date": "2026-05-02"
+  },
+  {
+    "id": 6,
+    "name": "Tania Sultana",
+    "picture": "https://randomuser.me/api/portraits/women/21.jpg",
+    "email": "tania.sultana@gmail.com",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags": ["cousin", "close family"],
+    "bio": "My cousin who recently started her own online clothing business. We talk frequently about her progress.",
+    "goal": 10,
+    "next_due_date": "2026-05-08"
+  },
+  {
+    "id": 7,
+    "name": "Mahmudul Karim",
+    "picture": "https://randomuser.me/api/portraits/men/73.jpg",
+    "email": "mahmudul.karim@yahoo.com",
+    "days_since_contact": 16,
+    "status": "overdue",
+    "tags": ["mentor", "career"],
+    "bio": "Senior from university who guided me in my early career. Gives valuable advice on job growth.",
+    "goal": 14,
+    "next_due_date": "2026-04-25"
+  },
+  {
+    "id": 8,
+    "name": "Sadia Islam",
+    "picture": "https://randomuser.me/api/portraits/women/38.jpg",
+    "email": "sadia.islam@protonmail.com",
+    "days_since_contact": 7,
+    "status": "on-track",
+    "tags": ["book club", "reading"],
+    "bio": "We meet monthly for a book club. Recently discussed 'Atomic Habits' and personal development topics.",
+    "goal": 14,
+    "next_due_date": "2026-05-12"
+  }
+]

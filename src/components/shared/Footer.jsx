@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="footer container mx-auto footer-horizontal footer-center bg-[#244D3F] text-primary-content p-10">
+    <footer className="footer  footer-horizontal footer-center bg-[#244D3F] text-primary-content p-10">
       <aside>
         <h2 className="font-bold text-3xl">KeenKeeper</h2>
         <p>

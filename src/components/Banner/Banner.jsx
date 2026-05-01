@@ -2,7 +2,7 @@ import { FaPlus } from "react-icons/fa";
 
 const Banner = () => {
   return (
-    <div className="container mx-auto min-h-screen flex justify-center items-center">
+    <div className=" min-h-screen flex justify-center items-center">
       <div className="text-center ">
         <h2 className="text-4xl">Friends to keep close in your life</h2>
         <p className="pb-4">
