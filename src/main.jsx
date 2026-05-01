@@ -5,12 +5,17 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import Root from "./layout/Root.jsx";
 import Timeline from "./pages/timeline/Timeline.jsx";
 import Analytics from "./pages/analytics/Analytics.jsx";
+import Home from "./pages/home/Home.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
   children:[
+    {
+      path:"/",
+      element:<Home></Home>
+    },
     {
     path: "/timeline",
     element: <Timeline></Timeline>,
