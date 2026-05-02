@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router";
@@ -42,9 +42,13 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <FriendProvider>
-      <RouterProvider router={router} />,
+    <Suspense
+      fallback={<span className="loading loading-spinner text-error"></span>}
+    >
+      <FriendProvider>
+        <RouterProvider router={router} />,
         <ToastContainer />
-    </FriendProvider>
+      </FriendProvider>
+    </Suspense>
   </StrictMode>,
 );

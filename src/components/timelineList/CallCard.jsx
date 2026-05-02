@@ -13,8 +13,8 @@ const CallCard = () => {
       {storedFriendCall.map((call, ind) => {
         return (
           <div key={ind}>
-            <div className="flex justify-between items-center shadow w-full">
-              <img src={"/public/meetup.png"} alt="" />
+            <div className="flex justify-between items-center shadow ">
+              <img src={"/meetup.png"} alt="" />
               <div>
                 {/* {storedFriendCall.length} */}
                 <h3>Call with {call.name}</h3>

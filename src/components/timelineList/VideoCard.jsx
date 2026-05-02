@@ -14,11 +14,11 @@ const VideoCard = () => {
       {storedFriendVideo.map((video, ind) => {
         return (
           <div key={ind}>
-            <div className="flex justify-between items-center shadow w-full">
-              <img src={"/public/camera.png"} alt="" />
+            <div className="flex justify-between items-center shadow ">
+              <img src={"/camera.png"} alt="" />
               <div>
                 {/* {storedFriendCall.length} */}
-                <h3>Message with {video.name}</h3>
+                <h3>Video with {video.name}</h3>
                 <p>{formattedDate}</p>
               </div>
             </div>

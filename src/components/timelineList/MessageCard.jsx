@@ -14,11 +14,11 @@ const MessageCard = () => {
       {storedFriendMessage.map((message, ind) => {
         return (
           <div key={ind}>
-            <div className="flex justify-between items-center shadow w-full" >
-              <img src={'/public/text.png'} alt="" />
+            <div className="flex justify-between items-center shadow " >
+              <img src={'/text.png'} alt="" />
               <div>
                 {/* {storedFriendCall.length} */}
-                <h3>Message with {message.name}</h3>
+                <h3>Text with {message.name}</h3>
                 <p>{formattedDate}</p>
               </div>
             </div>

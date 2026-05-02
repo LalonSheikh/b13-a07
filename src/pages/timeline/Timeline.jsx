@@ -6,7 +6,7 @@ const Timeline = () => {
   return (
     <div className="container mx-auto min-h-screen  text-center">
       <h2 className="text-3xl">Timeline</h2>
-      <div className="flex justify-center">
+      <div className="flex justify-center w-full">
         <div className="space-y-5  gap-2">
           <CallCard /> <MessageCard /> <VideoCard />
         </div>
