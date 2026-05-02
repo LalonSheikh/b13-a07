@@ -30,13 +30,11 @@ const Analytics = () => {
   return (
     <div>
       <div className="flex justify-center mt-10">
+        <h2 className="text-center text-4xl">Friendship Analytics</h2>
         <PieChart width={400} height={400}>
           <Pie data={data} dataKey="value" outerRadius={130} label>
             {data.map((entry, index) => (
-              <Cell
-                key={index}
-                fill={COLORS[index % COLORS.length]} 
-              />
+              <Cell key={index} fill={COLORS[index % COLORS.length]} />
             ))}
           </Pie>
           <Tooltip />
