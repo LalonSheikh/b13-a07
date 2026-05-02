@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { FriendContext } from "../../context/FriendProvider";
-import { data } from "react-router";
 import { Cell, Legend, Pie, PieChart, Tooltip } from "recharts";
 
 const COLORS = ["#22c55e", "#3b82f6", "#f59e0b", "#ef4444"];
@@ -21,7 +20,6 @@ const Analytics = () => {
       return acc;
     }, {});
 
-    
     return Object.entries(counts).map(([key, value]) => ({
       name: key.toUpperCase(),
       value: value,
@@ -37,7 +35,7 @@ const Analytics = () => {
             {data.map((entry, index) => (
               <Cell
                 key={index}
-                fill={COLORS[index % COLORS.length]} // dynamic color
+                fill={COLORS[index % COLORS.length]} 
               />
             ))}
           </Pie>

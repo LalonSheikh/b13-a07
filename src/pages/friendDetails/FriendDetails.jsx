@@ -118,7 +118,7 @@ const FriendDetails = () => {
             <div className="grid grid-cols-3 gap-4">
               <button
                 onClick={() => handleCall(expectedFriends)}
-                className="flex flex-col items-center gap-2 p-4  rounded-lg hover:bg-gray-50"
+                className="flex flex-col items-center gap-2 p-4 shadow cursor-pointer rounded-lg hover:bg-gray-50"
               >
                 <span className="text-sm">
                   <MdOutlineWifiCalling3 />
@@ -128,7 +128,7 @@ const FriendDetails = () => {
 
               <button
                 onClick={() => handleMessage(expectedFriends)}
-                className="flex flex-col items-center gap-2 p-4  rounded-lg hover:bg-gray-50"
+                className="flex flex-col items-center gap-2 p-4  rounded-lg shadow cursor-pointer  hover:bg-gray-50"
               >
                 <span className="text-sm">
                   {" "}
@@ -137,7 +137,10 @@ const FriendDetails = () => {
                 </span>
               </button>
 
-              <button onClick={()=>handleVideo(expectedFriends)} className="flex flex-col items-center gap-2 p-4  rounded-lg hover:bg-gray-50">
+              <button
+                onClick={() => handleVideo(expectedFriends)}
+                className="flex flex-col items-center gap-2 p-4 shadow cursor-pointer rounded-lg hover:bg-gray-50"
+              >
                 <span className="text-sm">
                   <PiVideoCamera className="text-lg" /> Video
                 </span>
